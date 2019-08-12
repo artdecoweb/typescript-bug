@@ -1,9 +1,9 @@
-export { default } from './lib'
+export { default as bug } from './lib'
 
 /**
  * Directly exported method.
  * @param {string} name The name of the method.
  */
-export const secondaryAPI = (name) => {
+export default function (name) {
   console.log(name)
 }
