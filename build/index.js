@@ -1,29 +1,11 @@
-const { debuglog } = require('util');
-
-const LOG = debuglog('@artdeco/typescript-bug')
+const $_lib = require('./lib');
 
 /**
- * The bug in TypeScript.
- * @param {Config} [config] Options for the program.
- * @param {boolean} [config.shouldRun=true] A boolean option. Default `true`.
- * @param {string} config.text A text to return.
+ * @param {string} name The name of the method.
  */
-               async function typescriptBug(config = {}) {
-  const {
-    shouldRun = true,
-    text,
-  } = config
-  if (!shouldRun) return
-  LOG('@artdeco/typescript-bug called with %s', text)
-  return text
+const secondaryAPI = (name) => {
+  console.log(name)
 }
 
-/* documentary types/index.xml */
-/**
- * @typedef {Object} Config Options for the program.
- * @prop {boolean} [shouldRun=true] A boolean option. Default `true`.
- * @prop {string} text A text to return.
- */
-
-
-module.exports = typescriptBug
+module.exports = $_lib
+module.exports.secondaryAPI = secondaryAPI
